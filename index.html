@@ -1,0 +1,195 @@
+<!--
+=========================================================
+* * Black Dashboard - v1.0.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/black-dashboard
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <title>
+    My Shop
+  </title>
+  <script src="https://cdn.sellix.io/static/js/embed.js"></script>
+  <link href="https://cdn.sellix.io/static/css/embed.css" rel="stylesheet" />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="./assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <style type="text/css">
+    html::-webkit-scrollbar {
+      width: 0 !important;
+    }
+
+    @-moz-document url-prefix() {
+      html {
+        scrollbar-width: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="">
+  <div class="main-panel">
+    <div class="container mt-5">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/8SRS2eHEdp">Discord</a>
+        </li>
+      </ul>
+
+      <div class="content mt-5">
+        <h1
+          style="text-align:center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder; font-size: 100px;">
+          Kratos <span class="text-info">Booter</span></h1>
+        <h6
+          style="text-align:center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bolder;">
+          The best and cheapest on the market</h6>
+      </div>
+
+      <div class="content mt-5">
+        <h4
+          style="text-align:center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bolder;">
+          Our <span class="text-info">Plans:</span>
+        </h4>
+<center>
+        <div class="row ml-4 mt-4">
+
+          <div class="card mr-4" style="width: 20rem;">
+            <img class="card-img-top" src="https://cdn.discordapp.com/attachments/797673359373631568/799648059726233620/kratoslogo.png" alt="YouTube Premium logo">
+            <div class="card-body">
+              <h4 class="card-title">Kratos Booter 1 Week License</h4>
+              <button class="btn btn-primary mr-5 mt-5" data-sellix-product="6001aaf796ddb" type="submit" alt="Buy Now with Sellix.io">
+                Purchase
+              </button><span
+                class="ml-5" style="position: relative; top: 24px;"><strong>$5,00</strong></span>
+            </div>
+          </div>
+		  <br>
+          <div class="card mr-4" style="width: 20rem;">
+            <img class="card-img-top" src="https://cdn.discordapp.com/attachments/797673359373631568/799648059726233620/kratoslogo.png" alt="Kratos Booter 1 Month License">
+            <div class="card-body">
+              <h4 class="card-title">Kratos Booter 1 Month License</h4>
+              <button class="btn btn-primary mr-5 mt-5" data-sellix-product="6001ab013876f" type="submit" alt="Buy Now with Sellix.io">
+                Purchase
+              </button><span
+                class="ml-5" style="position: relative; top: 24px;"><strong>$10,00</strong></span>
+            </div>
+          </div>
+          
+        </div>
+		</center>
+      </div>
+        </div>
+
+
+        
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="copyright">
+          ©
+         2012 made with Love by
+          <a href="#">Jury</a> stop the skids.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $().ready(function () {
+        $sidebar = $('.sidebar');
+        $navbar = $('.navbar');
+        $main_panel = $('.main-panel');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+        sidebar_mini_active = true;
+        white_color = false;
+
+        window_width = $(window).width();
+
+        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+
+
+        $('.fixed-plugin a').click(function (event) {
+          if ($(this).hasClass('switch-trigger')) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            } else if (window.event) {
+              window.event.cancelBubble = true;
+            }
+          }
+        });
+
+        $('.fixed-plugin .background-color span').click(function () {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data', new_color);
+          }
+
+          if ($main_panel.length != 0) {
+            $main_panel.attr('data', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data', new_color);
+          }
+        });
+
+        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function () {
+          var $btn = $(this);
+
+          if (sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            sidebar_mini_active = false;
+            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+          } else {
+            $('body').addClass('sidebar-mini');
+            sidebar_mini_active = true;
+            blackDashboard.showSidebarMessage('Sidebar mini activated...');
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function () {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function () {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
